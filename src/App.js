@@ -33,7 +33,9 @@ export default function App() {
 
     temp.splice(repoIndex, 1);
 
-    setRepositories([...temp, response.data]);
+    const repo = response.data
+
+    setRepositories([...temp, repo]);
   }
 
   return (
@@ -56,7 +58,7 @@ export default function App() {
             <Text
               style={styles.likeText}
               // Remember to replace "1" below with repository ID: {`repository-likes-${repository.id}`}
-              testID={`repository-likes-1`}
+              testID={`repository-likes-${item.id}`}
             >
               {item.likes} curtidas
             </Text>
